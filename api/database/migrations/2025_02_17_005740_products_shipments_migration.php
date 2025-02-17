@@ -11,19 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sales', function(Blueprint $table){
+        Schema::create('shipments',function (Blueprint $table){
             $table->increments('id');
-            $table->date('sale_date');
+            $table->integer('order_id')->unsigned();
             $table->integer('customer_id')->unsigned();
-            $table->decimal('total');
-            $table->integer('sale_status_id')->unsigned();
-            $table->integer('payment_id')->unsigned();
+            $table->string('mailing_address');
+            $table->string('shipping_method');
+            $table->double('shipping_cost');
+            $table->string('status');
+            $table->date('shipping_date');
+            $table->string('tracking_code');
 
+            $table->foreign('order_id')->references('id')->on('sales');
             $table->foreign('customer_id')->references('id')->on('customers');
-            $table->foreign('sale_status_id')->references('id')->on('sale_status');
-            $table->foreign('payment_id')->references('id')->on('payments');
 
             $table->timestamps();
+
         });
     }
 
