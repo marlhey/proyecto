@@ -5,13 +5,13 @@
       <a href="./index.html" class="brand-link">
         <!--begin::Brand Image-->
         <img
-          src="../../dist/assets/img/AdminLTELogo.png"
-          alt="AdminLTE Logo"
+          src="{{ asset('logo/logoMMPG.jpg') }}" 
+          alt="MMPG Store Logo"
           class="brand-image opacity-75 shadow"
         />
         <!--end::Brand Image-->
         <!--begin::Brand Text-->
-        <span class="brand-text fw-light">AdminLTE 4</span>
+        <span class="brand-text fw-light">MMPG Store</span>
         <!--end::Brand Text-->
       </a>
       <!--end::Brand Link-->
@@ -28,13 +28,94 @@
           data-accordion="false"
         >
           <li class="nav-item">
-            <a href="./generate/theme.html" class="nav-link">
-              <i class="nav-icon bi bi-speedometer"></i>
+            <a href="{{url('/admin')}}" class="nav-link">
+              <i class="nav-icon bi bi-house-door"></i>
               <p>
                 Home
               </p>
             </a>
-           
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/products')}}" class="nav-link">
+              <i class="nav-icon bi bi-list"></i>
+              <p>
+                Productos
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/discounts')}}"  class="nav-link">
+              <i class="nav-icon bi bi-receipt"></i>
+              <p>
+                Descuentos
+              </p>
+            </a>
+          </li>
+
+        
+          <li class="nav-item">
+            <a href="{{url('/admin/payments')}}" class="nav-link">
+              <i class="nav-icon bi bi-cash"></i>
+              <p>
+                Pagos
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/sales')}}" class="nav-link">
+              <i class="nav-icon bi bi-bag-fill"></i>
+              <p>
+                Ventas
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/sales-details')}}" class="nav-link">
+              <i class="nav-icon bi bi-bag-plus-fill"></i>
+              <p>
+                Ventas Detalles
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/shipments')}}" class="nav-link">
+              <i class="nav-icon bi bi-truck"></i>
+              <p>
+                Envios
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/customers')}}" class="nav-link">
+              <i class="nav-icon bi bi-person-arms-up"></i>
+              <p>
+                Clientes
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/suppliers')}}" class="nav-link">
+              <i class="nav-icon bi bi-person-rolodex"></i>
+              <p>
+                Proveedores
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('/admin/users')}}" class="nav-link">
+              <i class="nav-icon bi bi-people-fill"></i>
+              <p>
+                Usuarios
+              </p>
+            </a>
           </li>
     
         </ul>
