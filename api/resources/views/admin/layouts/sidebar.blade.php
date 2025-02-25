@@ -37,6 +37,16 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{url('/admin/categories')}}" class="nav-link">
+              <i class="nav-icon bi bi-journal-bookmark-fill"></i>
+              <p>
+                Categorias
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
             <a href="{{url('/admin/products')}}" class="nav-link">
               <i class="nav-icon bi bi-list"></i>
               <p>
@@ -72,17 +82,8 @@
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="{{url('/admin/sales-details')}}" class="nav-link">
-              <i class="nav-icon bi bi-bag-plus-fill"></i>
-              <p>
-                Ventas Detalles
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
+        
+         <li class="nav-item">
             <a href="{{url('/admin/shipments')}}" class="nav-link">
               <i class="nav-icon bi bi-truck"></i>
               <p>
