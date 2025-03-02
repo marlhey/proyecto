@@ -47,17 +47,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($data as $productos)
+                             @foreach($data as $productos)
                                 <tr>
                                     <td>{{ $productos->id }}</td>
-                                    <td>{{ $productos->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $productos->name }}</td> 
+                                    <td>{{($productos->slug) }}</td>
+                                    <td>{{ $productos->img}}</td> 
+                                    <td>{{ $productos->price}}</td>
+                                    <td>{{ $productos->category_id}}</td>
+                                    <td>{{ $productos->description}}</td>
+                                    <td>{{ $productos->stock}}</td>
+                                    <td>{{ $productos->status}}</td>
+                                    <td><button class="btn btn-warning btnEdit" 
+                                        data-name="{{$productos->name}}"
+                                        data-id="{{$productos->id}}"
+                                        data-category_id="{{$productos->category_id}}"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button></td>
+                                    <td><form action="{{ route('products.destroy', $productos->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Estás seguro de eliminar este estudiante?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button></form></td>
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>

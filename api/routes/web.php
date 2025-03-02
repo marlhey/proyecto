@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/send-email',[UsersController::class,'sendEmail']);
 Route::get('/admin',function(){ return view('admin.index');});
 Route::get('/admin/products',[ProductsController::class,'viewProduct']);
+Route::delete('/admin/products/{id}',[ProductsController::class,'destroy'])->name('products.destroy');
 Route::get('/admin/categories',function(){ return view('admin.categories');});
 Route::get('/admin/discounts',function(){ return view('admin.discounts');});
 Route::get('/admin/payments',function(){ return view('admin.payments');});
