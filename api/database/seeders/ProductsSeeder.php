@@ -16,16 +16,16 @@ class ProductsSeeder extends Seeder
     public function run(): void
     {
         DB::table('products')->insert([
-'name'=>'sudadera My Hero Academia',
-'slug'=>'sudaderas_Anime',
-'img'=>'default_product.jpg',
-'price'=>300.00,
-'catogory_id'=>'2',
-'description'=>'Sudadera roja de My Hero Academia con un diseño impactante que
-    presenta tres ventanitas en el pecho, mostrando los ojos de tres icónicos
-    personajes de la serie.',
-'stock'=>'8',
-'status'=>'Disponible',
+            'name'=>'sudadera My Hero Academia',
+            'slug'=>'sudaderas_Anime',
+            'img'=>'default_product.jpg',
+            'price'=>300.00,
+            'category_id'=>'2',
+            'description'=>'Sudadera roja de My Hero Academia con un diseño impactante que
+                presenta tres ventanitas en el pecho, mostrando los ojos de tres icónicos
+                personajes de la serie.',
+            'stock'=>'8',
+            'status'=>'Disponible',
         ]);
    
         DB::table('products')->insert([
@@ -33,7 +33,7 @@ class ProductsSeeder extends Seeder
             'slug'=>'Manga_Anime',
             'img'=>'default_product2.jpg',
             'price'=>220.00,
-            'catogory_id'=>'1',
+            'category_id'=>'1',
             'description'=>'Garou sigue evolucionando en su camino 
             como el cazador de héroes, mientras que Saitama, con su fuerza abrumadora, 
             se ve envuelto en el caos de la Asociación de Monstruos. 

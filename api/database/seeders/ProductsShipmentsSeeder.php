@@ -13,7 +13,7 @@ class ProductsShipmentsSeeder extends Seeder
      */
     public function run(): void
     {
-         DB::table('shipment')->insert([
+         DB::table('shipments')->insert([
             'order_id'=>1,
             'customer_id'=>1,
             'mailing_address'=>'Col. las praderas',
@@ -24,7 +24,7 @@ class ProductsShipmentsSeeder extends Seeder
             'tracking_code'=>'WRE245SBH'
           ]);
 
-          DB::table('shipment')->insert([
+          DB::table('shipments')->insert([
             'order_id'=>2,
             'customer_id'=>2,
             'mailing_address'=>'Av. Los cedros',

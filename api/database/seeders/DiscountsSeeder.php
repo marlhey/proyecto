@@ -17,14 +17,14 @@ class DiscountsSeeder extends Seeder
             'discount_key'=>'papaslocas',
             'quantity'=>2,
             'sale_id'=>1,
-            'status'=>'activo'
+            'state'=>'activo'
         ]);
 
         DB::table('discounts')->insert([
             'discount_key'=>'lospinos',
             'quantity'=>1,
             'sale_id'=>2,
-            'status'=>'inactivo'
+            'state'=>'inactivo'
         ]);
     }
 }

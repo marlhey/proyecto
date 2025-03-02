@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('category_id')->unsigned();
             $table->text('description');
             $table->integer('stock');
-            $table->integer('status');
+            $table->string('status');
 
             $table->foreign('category_id')->references('id')->on('categorys');
 

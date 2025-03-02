@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProductsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/send-email',[UsersController::class,'sendEmail']);
 Route::get('/admin',function(){ return view('admin.index');});
-Route::get('/admin/products',function(){ return view('admin.products');});
+Route::get('/admin/products',[ProductsController::class,'viewProduct']);
 Route::get('/admin/categories',function(){ return view('admin.categories');});
 Route::get('/admin/discounts',function(){ return view('admin.discounts');});
 Route::get('/admin/payments',function(){ return view('admin.payments');});
