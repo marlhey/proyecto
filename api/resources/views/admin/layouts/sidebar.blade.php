@@ -1,4 +1,5 @@
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+  <link rel="stylesheet" href="{{ asset('logo/styleAside.css')}}" />
     <!--begin::Sidebar Brand-->
     <div class="sidebar-brand">
       <!--begin::Brand Link-->

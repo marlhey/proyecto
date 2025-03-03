@@ -43,17 +43,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                             @foreach($data as $categoria)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $categoria->id}}</td>
+                                    <td>{{ $categoria->name}}</td>
+                                    <td>{{ $categoria->description }}</td> 
+                                    <td>{{ $categoria->image }}</td> 
+                                    <td>{{ $categoria->state }}</td>
+
+                                    <td><button class="btn btn-warning btnEdit" 
+                                        data-name="{{$categoria->name}}"
+                                        data-id="{{$categoria->id}}"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button></td>
+                                    <td><form action="{{ route('categories.destroy', $categoria->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Estás seguro de eliminar esta categoria?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button></form></td>
                                 </tr>
                             @endforeach 
-                            --}}
+                        
                         </tbody>
                     </table>
                 </div>
