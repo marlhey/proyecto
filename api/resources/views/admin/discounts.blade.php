@@ -37,23 +37,30 @@
                                 <th>ID</th>
                                 <th>Clave de descuento</th>
                                 <th>Cantidad</th>
+                                <th>Venta</th>
                                 <th>Estado</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $descuentos)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $descuentos->id }}</td>
+                                    <td>{{ $descuentos->discount_key}}</td> 
+                                    <td>{{($descuentos->quantity) }}</td>
+                                    <td>{{ $descuentos->sale_id}}</td> 
+                                    <td>{{ $descuentos->state}}</td>
+                                    <td><button class="btn btn-warning btnEdit" 
+                                        data-id="{{$descuentos->id}}"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button></td>
+                                    <td><form action="{{ route('discounts.destroy', $descuentos->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Estás seguro de eliminar este estudiante?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button></form></td>
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>

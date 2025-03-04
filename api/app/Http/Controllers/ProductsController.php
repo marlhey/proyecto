@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Image;
+use App\Models\Reviews;
+use App\Models\Sale_Details;
 
 class ProductsController extends Controller
 {
@@ -36,14 +39,28 @@ class ProductsController extends Controller
       // ELIMINAR PRODUCTO
       public function destroy($id)
       {
-          $products = Product::find($id);
-          if ($products != null) {
-              $products->delete();
+          $product = Product::find($id);
+      
+          if ($product) {
+              // Eliminar archivos físicos de las imágenes
+              $imagenes = Image::where('product_id',$id)->get();
+              $reviews = Reviews::where('product_id',$id)->delete();
+              $sales_details = Sale_Details::where('product_id',$id)->delete();
+              foreach ($imagenes as $image) {
+                
+                if(file_exists(public_path('products/'.$image->img))){
+                    unlink(public_path('products/'.$image->img));
+                }
+                $image->delete();
+            }
+              // Eliminar el producto
+              $product->delete();
+      
               return redirect('/admin/products')
                   ->with('message', 'Registro del producto ha sido eliminado correctamente');
           }
-  
+      
           return redirect('/admin/products')
-              ->with('error', 'Regitro del producto no sé ha encontrado');
+              ->with('error', 'Registro del producto no se ha encontrado');
       }
 }
