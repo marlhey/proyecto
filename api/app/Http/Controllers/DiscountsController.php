@@ -15,11 +15,23 @@ class DiscountsController extends Controller
     {
         // Obtener los descuentos con su venta
         $discounts = Discount::all();
-    
-
         return view('admin.discounts')
             ->with('data', $discounts); // Usar los mismos nombres de variable
             
+    }
+
+    public function update( Request $request,$id){
+        $discount = Discount::find($id);
+        if($discount !=null){
+            $discount->key = $request->key;
+            $discount->quantity = $request->quantity;
+            $discount->sale = $request->sale;
+            $discount->state = $request->state;
+            $discount->save();
+        }
+        return redirect('/admin/discounts')
+        ->with('message','Descuento actualizado correctamente');
+
     }
 
     
@@ -41,5 +53,5 @@ class DiscountsController extends Controller
             ->with('error', 'Registro del descuento no se ha encontrado');
     }
 
-    //HACER LA RUTA DE WEB
+    
 }

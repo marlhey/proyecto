@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
+
+    
+    protected $table = 'sales';
     protected $fillable = [
         'sale_date',
         'customer_id',

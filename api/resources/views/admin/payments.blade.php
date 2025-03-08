@@ -8,10 +8,7 @@
             <!--begin::Row-->
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 mb-3">Pagos</h1>
-                    <a href="{{ url('/admin/students/add') }}" class="btn btn-dark">
-                                        <i class="align-middle" data-feather="plus"></i>
-                                        Agregar
-                                    </a>
+                  
                 </div>  
             
                 @if($mensaje = Session::get('message'))
@@ -40,22 +37,21 @@
                                 <th>Estado de Pago</th>
                                 <th>Fecha de Pago</th>
                                 <th>Referencia de transacción</th>
-                                <th></th>
-                                <th></th>
+                               
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $pagos)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
-                                </tr>
+                                    <td>{{ $pagos->id }}</td>
+                                    <td>{{ $pagos->cliente}}</td> 
+                                    <td>{{($pagos->payment) }}</td>
+                                    <td>{{ $pagos->metodo}}</td> 
+                                    <td>{{ $pagos->status}}</td>
+                                    <td>{{ $pagos->payment_date}}</td>
+                                    <td>{{ $pagos->transaction_reference}}</td>
+                                 </tr>
                             @endforeach 
-                            --}}
                         </tbody>
                     </table>
                 </div>

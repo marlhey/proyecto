@@ -12,8 +12,9 @@ class PaymentsController extends Controller
     public function viewPayments()
     {
       // Obtener los pagos con sus relaciones
-    $payments = Payment::select('payments.*', 'customers.customer_id as cliente', 'methods.name_methods as metodo')
+    $payments = Payment::select('payments.*', 'users.name as cliente', 'methods.name_method as metodo')
     ->join('customers', 'payments.customer_id', '=', 'customers.id')
+    ->join('users', 'customers.customer_id', '=', 'users.id')
     ->join('methods', 'payments.method_id', '=', 'methods.id')
     ->get();
 
@@ -26,4 +27,5 @@ class PaymentsController extends Controller
         ->with('customers', $customers)
         ->with('methods', $methods);
     }
+
 }

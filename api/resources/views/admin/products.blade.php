@@ -63,7 +63,7 @@
                                         data-id="{{$productos->id}}"
                                         data-category_id="{{$productos->category_id}}"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button></td>
-                                    <td><form action="{{ route('products.destroy', $productos->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Estás seguro de eliminar este estudiante?');">
+                                    <td><form action="{{ route('products.destroy', $productos->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('¿Estás seguro de eliminar este producto?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button></form></td>

@@ -7,7 +7,7 @@
             <div class="container-fluid">
             <!--begin::Row-->
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 mb-3">Ventas</h1>
+                    <h1 class="h3 mb-3">sales</h1>
                     <a href="{{ url('/admin/sales/add') }}" class="btn btn-dark">
                                         <i class="align-middle" data-feather="plus"></i>
                                         Agregar
@@ -26,7 +26,7 @@
     <div class="app-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6"><h5 class="mb-0">Listado de ventas</h5></div>
+                <div class="col-sm-6"><h5 class="mb-0">Listado de sales</h5></div>
                 
                 <div class="container p-5" >
                     
@@ -35,25 +35,28 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Fecha de venta</th>
+                                <th>Cliente</th>
                                 <th>Total</th>
                                 <th>Estado</th>
-                                <th>Pago</th>
-                                <th></th>
+                                <th>Pago</th> 
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $sale)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $sale->id }}</td>
+                                    <td>{{ $sale->sale_date}}</td> 
+                                    <td>{{ $sale->cliente}}</td>
+                                    <td>${{ number_format($sale->total, 2) }}</td>
+                                    <td>{{ $sale->estatus }}</td>
+                                    <td>{{ $sale->pagos}}</td>
+                                    <td><button class="btn btn-warning btnEdit" 
+                                        data-id="{{$sale->id}}"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button></td>
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>
