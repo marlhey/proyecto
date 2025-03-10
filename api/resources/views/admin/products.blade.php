@@ -61,7 +61,7 @@
                                     <td><button class="btn btn-warning btnEdit" 
                                         data-name="{{$productos->name}}"
                                         data-id="{{$productos->id}}"
-                                        data-category_id="{{$productos->category_id}}"
+                                        data-category-id="{{$productos->category_id}}"
                                         data-slug="{{$productos->slug}}"
                                         data-price="{{$productos->price}}"
                                         data-description="{{$productos->description}}"
@@ -116,7 +116,7 @@
                              <label for="">Categoria:</label>
                              <select type="text" class="form-control" id="txtCategory" name="category">
                                  @foreach($data as $categoria)
-                                     <option value="{{$categoria->id}}">{{$categoria->id}}</option>
+                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                                  @endforeach
                              </select>
                          </div>
@@ -171,6 +171,7 @@
                 document.getElementById('txtStock').value = stock
                 document.getElementById('txtStatus').value = status
                 document.getElementById('formUpdate').action="/admin/products/update/"+id
+
             })
         }
      }

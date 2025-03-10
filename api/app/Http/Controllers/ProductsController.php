@@ -35,9 +35,15 @@ class ProductsController extends Controller
             ->with('categories', $categories);
     }
 
+    public function addProduct(){
+        $categories = Category::all();
+        return view('admin.product-add')
+            ->with('categories', $categories);
+    }
+
     //INSERTAR PRODUCTO
     public function saveProduct(Request $request){
-        //dd($request->name);
+        //dd($request);
         //validar datos
         $validated = $request->validate([
             'name'=>'required|string|min:2',
@@ -71,7 +77,7 @@ class ProductsController extends Controller
         $product= new Product();
         $product->name = $request->name;
         $product->slug = $request->slug;
-        $product->img_profile = $name;
+        $product->img = $name;
         $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->description = $request->description;
@@ -85,13 +91,14 @@ class ProductsController extends Controller
 
     //ACTUALIZAR PRODUCTO
     public function update( Request $request,$id){
+        //dd($request);
      $product = Product::find($id);
      if($product !=null){
          $product->name = $request->name;
          $product->slug = $request->slug;
          $product->img = $request->img;
          $product->price = $request->price;
-         $product->category_id = $request->category_id;
+         $product->category_id = $request->category;
          $product->description = $request->description;
          $product->stock = $request->stock;
          $product->status = $request->status;

@@ -15,6 +15,9 @@ Route::get('/', function () {
 Route::get('/send-email',[UsersController::class,'sendEmail']);
 Route::get('/admin',function(){ return view('admin.index');});
 Route::get('/admin/products',[ProductsController::class,'viewProduct']);
+Route::get('/admin/products/add',[ProductsController::class,'addProduct']);
+Route::post('/admin/products/add',[ProductsController::class,'saveProduct']);
+Route::post('/admin/products/update/{id}',[ProductsController::class,'update']);
 Route::delete('/admin/products/{id}',[ProductsController::class,'destroy'])->name('products.destroy');
 Route::get('/admin/categories',[CategoriesController::class,'viewCategory']);
 Route::delete('/admin/categories/{id}',[CategoriesController::class,'destroy'])->name('categories.destroy');
