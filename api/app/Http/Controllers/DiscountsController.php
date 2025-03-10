@@ -58,9 +58,9 @@ class DiscountsController extends Controller
     public function update( Request $request,$id){
         $discount = Discount::find($id);
         if($discount !=null){
-            $discount->key = $request->key;
+            $discount->discount_key = $request->key;
             $discount->quantity = $request->quantity;
-            $discount->sale = $request->sale;
+            $discount->sale_id = $request->sale;
             $discount->state = $request->state;
             $discount->save();
         }
