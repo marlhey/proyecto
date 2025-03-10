@@ -19,6 +19,8 @@ Route::delete('/admin/products/{id}',[ProductsController::class,'destroy'])->nam
 Route::get('/admin/categories',[CategoriesController::class,'viewCategory']);
 Route::delete('/admin/categories/{id}',[CategoriesController::class,'destroy'])->name('categories.destroy');
 Route::get('/admin/discounts',[DiscountsController::class,'viewDiscount']);
+Route::get('/admin/discounts/add',[DiscountsController::class,'addDiscount']);
+Route::post('/admin/discounts/add',[DiscountsController::class,'saveDiscount']);
 Route::post('/admin/discounts/update/{id}',[DiscountsController::class,'update']);
 Route::delete('/admin/discounts/{id}',[DiscountsController::class,'destroy'])->name('discounts.destroy');
 Route::get('/admin/payments',[PaymentsController::class,'viewPayments']);

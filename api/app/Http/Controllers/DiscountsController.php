@@ -20,22 +20,29 @@ class DiscountsController extends Controller
             
     }
 
+    //Vista de Agregar Descuentos
+    public function addDiscount(){
+        $sale = Sale::all();
+        return view('admin.discounts-add')
+        ->with('sales',$sale);
+    }
+
     
     //INSERTAR DESCUENTO
     public function saveDiscount(Request $request){
         //dd($request->name);
         //validar datos
         $validated = $request->validate([
-            'discount_key'=>'required|string|min:2',
+            'key'=>'required|string|min:2',
             'quantity'=>'required|integer',
-            'sale_id'=>'required|integer',
+            'sale'=>'required|integer',
             'state'=>'required|string|min:2'
             
             
         ],[
-            'discount_key.required'=>'La llave de descuento es requerida',
+            'key.required'=>'La llave de descuento es requerida',
             'quantity.required'=>'La cantidad es requerida',
-            'sale_id.required'=>'La venta es requerida',
+            'sale.required'=>'La venta es requerida',
             'state.required'=>'El estado es requerido'
 
         ]);
@@ -43,9 +50,9 @@ class DiscountsController extends Controller
 
         //INSERTAR DATO
         $discount= new Discount();
-        $discount->discount_key = $request->discount_key;
+        $discount->discount_key = $request->key;
         $discount->quantity = $request->quantity;
-        $discount->sale_id = $request->sale_id;
+        $discount->sale_id = $request->sale;
         $discount->state = $request->state;
         $discount->save();
         return redirect('/admin/discounts')
