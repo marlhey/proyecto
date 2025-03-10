@@ -17,4 +17,14 @@ class UsersController extends Controller
                         });
         echo"Sen envió el correo";
     }
+
+    public function viewUser()
+    {
+            $user = User::all();
+    
+            return view('admin.users')
+            ->with('data', $user);
+    }
+
+
 }
