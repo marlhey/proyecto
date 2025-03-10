@@ -8,7 +8,7 @@
             <!--begin::Row-->
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 mb-3">Descuentos</h1>
-                    <a href="{{ url('/admin/students/add') }}" class="btn btn-dark">
+                    <a href="{{ url('/admin/discounts/add') }}" class="btn btn-dark">
                                         <i class="align-middle" data-feather="plus"></i>
                                         Agregar
                                     </a>

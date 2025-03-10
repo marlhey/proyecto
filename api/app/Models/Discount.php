@@ -13,8 +13,4 @@ class Discount extends Model
         'state',
     ];
 
-    public function sales()
-    {
-        return $this->hasMany(Sale::class, 'nombre_correcto_de_la_foreign_key');
-    }
 }

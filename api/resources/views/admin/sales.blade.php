@@ -7,7 +7,7 @@
             <div class="container-fluid">
             <!--begin::Row-->
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 mb-3">sales</h1>
+                    <h1 class="h3 mb-3">Ventas</h1>
                     <a href="{{ url('/admin/sales/add') }}" class="btn btn-dark">
                                         <i class="align-middle" data-feather="plus"></i>
                                         Agregar
