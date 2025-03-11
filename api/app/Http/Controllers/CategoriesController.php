@@ -22,60 +22,92 @@ class CategoriesController extends Controller
 
         public function viewCategory()
     {
-        // Obtener categorías con los productos relacionados
-        $categorias = Category::with('products') // para traer los productos relacionados
-            ->leftJoin('products', 'categories.id', '=', 'products.category_id')
-            ->select('categories.*', 'products.name as product_name') // Seleccionar columnas específicas
-            ->orderBy('categories.name', 'ASC')
-            ->get();
+        // Obtener categorías con los categoos relacionados
+        $categorias = Category::all();
 
         return view('admin.categories')
             ->with('data', $categorias);
     }
 
-    /*  // ELIMINAR PRODUCTO
-     public function destroy($id){
-         $categoria = Category::find($id);
-         if ($categoria != null) {
-             $categoria->delete();
-             return redirect('/admin/categories')
-                 ->with('message', 'Registro de categorias ha sido eliminado correctamente');
-         }
- 
-         return redirect('/admin/categories')
-             ->with('error', 'Regitro de categorias no sé ha encontrado');
-     } */
+    //Vista de Agregar categoria
+    public function addCategory(){
+        $categori = Category::all();
+        return view('admin.categories-add')
+        ->with('data',$categori);
+    }
+
+
+     //INSERTAR categorias para agregar
+    public function saveCategory(Request $request){
+        //dd($request->name);
+        //validamos los datos
+        $validated = $request->validate([
+            'name'=>'required|string|min:2',
+            'description'=>'required|string|min:2',
+            'image'=>'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'state'=>'required|string|min:2',
+            //nombre de input
+        ],[
+            'name.required'=>'El nombre es requerido',
+            'description.required'=>'La descripción es requerido',
+            'image.required'=>'La imagen es requerido',
+            'state.required'=>'El estado es requerida',
+
+        ]);
+
+        //SUBIR LA IMAGEN
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destino = public_path('categories/');
+        $request->image->move($destino,$name);
+
+        //INSERTAR DATO
+        $categorys= new Category();
+        $categorys->name = $request->name;
+        $categorys->description = $request->description;
+        $categorys->image = $name;
+        $categorys->state= $request->state;
+    
+        $categorys->save();
+        return redirect('/admin/categories')
+            ->with('message','Categoria insertada correctamente');
+        
+    }
+
+       //ACTUALIZAR categoria botón editar 
+    public function update( Request $request,$id){
+        $cate = Category::find($id);
+        if($cate !=null){
+             //SUBIR LA IMAGEN
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destino = public_path('categories/');
+            $request->image->move($destino,$name);
+
+
+            $cate->name = $request->name;
+            $cate->description = $request->description;
+            $cate->image = $name;
+            $cate->state = $request->estado;
+            $cate->save();
+        }
+        return redirect('/admin/categories')
+        ->with('message','Categoria actualizada correctamente');
+
+    }
 
      public function destroy($id)
      {
          $categoria = Category::find($id);
      
-         if ($categoria) {
-             // Eliminar productos relacionados y sus relaciones
-             foreach ($categoria->products as $product) {
-                 // Eliminar imágenes relacionadas
-                 foreach ($product->images as $image) {
-                     if (file_exists(public_path('products/' . $image->img))) {
-                         unlink(public_path('products/' . $image->img));
-                     }
-                     $image->delete();
-                 }
+         if($categoria){
+         $productos=Product::where('category_id',$id)->get();
+        
      
-                 // Eliminar reseñas relacionadas
-                 $product->reviews()->delete();
-     
-                 // Eliminar detalles de ventas relacionados
-                 $product->salesDetails()->delete();
-     
-                 // Eliminar el producto
-                 $product->delete();
-             }
-     
-             // Eliminar la categoría
-             $categoria->delete();
+     $categoria->delete();
      
              return redirect('/admin/categories')
-                 ->with('message', 'Registro de categoría y productos relacionados eliminados correctamente.');
+                 ->with('message', 'Registro de categoría y categoos relacionados eliminados correctamente.');
          }
      
          return redirect('/admin/categories')
@@ -83,22 +115,6 @@ class CategoriesController extends Controller
      }
 
     }
-
-/* public function destroy($id){
-    $categoria = Category::find($id);
-    if ($categoria != null) {
-        // Eliminar productos relacionados
-        $categoria->products()->delete();
-
-        // Eliminar la categoría
-        $categoria->delete();
-
-        return redirect('/admin/categories')
-            ->with('message', 'Registro de categorías y productos relacionados han sido eliminados correctamente');
-    }
-
-    return redirect('/admin/categories')
-        ->with('error', 'Registro de categorías no se ha encontrado'); */
 
 
 

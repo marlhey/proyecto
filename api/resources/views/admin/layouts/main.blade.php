@@ -343,6 +343,7 @@
       sparkline3.render();
     </script>
     @yield('scripts')
+  
     <!--end::Script-->
   </body>
   <!--end::Body-->
