@@ -68,7 +68,10 @@
 
                     <div class="form-group my-4">
                         <label for="">Estado</label>
-                        <input name="status" type="text" class="form-control" placeholder="Estado">
+                        <select name="status" id="" class="form-control">
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
                     </div>
                     
                     <div class="form-control my-4">
@@ -77,6 +80,8 @@
                         </button>
                     </div>
                 </form>
+
+
 
         </div>
     </div>

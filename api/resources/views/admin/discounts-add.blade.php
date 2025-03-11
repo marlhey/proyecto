@@ -44,7 +44,10 @@
 
                         <div class="form-group my-4">
                             <label for="">Estado:</label>
-                            <input name="state" type="text" class="form-control" placeholder="ej : Activo ó Inactivo">
+                            <select name="state" id="" class="form-control">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
                         </div>
                         
                         <div class="form-control my-4">

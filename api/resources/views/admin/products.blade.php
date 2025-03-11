@@ -8,7 +8,7 @@
             <!--begin::Row-->
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 mb-3">Productos</h1>
-                    <a href="{{ url('/admin/students/add') }}" class="btn btn-dark">
+                    <a href="{{ url('/admin/products/add') }}" class="btn btn-dark">
                                         <i class="align-middle" data-feather="plus"></i>
                                         Agregar
                                     </a>
@@ -54,7 +54,7 @@
                                     <td>{{($productos->slug) }}</td>
                                     <td>{{ $productos->img}}</td> 
                                     <td>{{ $productos->price}}</td>
-                                    <td>{{ $productos->category_id}}</td>
+                                    <td>{{ $productos->category_name}}</td>
                                     <td>{{ $productos->description}}</td>
                                     <td>{{ $productos->stock}}</td>
                                     <td>{{ $productos->status}}</td>
@@ -130,7 +130,10 @@
                         </div>
                         <div class="mb-3">
                             <label for="">Estatus:</label>
-                            <input type="text" class="form-control" id="txtStatus" name="status">
+                            <select name="status" id="txtStatus" class="form-control">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
                         </div>
                      </div>
                      <div class="modal-footer">

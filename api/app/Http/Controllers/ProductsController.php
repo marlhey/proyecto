@@ -22,10 +22,10 @@ class ProductsController extends Controller
     public function viewProduct()
     {
         // Obtener los productos con su categoría
-        $products = Product::with('category') // Aquí se usa la relación correcta
-            ->join('categorys', 'products.category_id', '=', 'categorys.id')
-            ->orderBy('categorys.name', 'ASC')
-            ->get();
+        $products = Product::join('categorys', 'products.category_id', '=', 'categorys.id')
+        ->select('products.*', 'categorys.name as category_name') // Agregamos el nombre de la categoría
+        ->orderBy('categorys.name', 'ASC')
+        ->get();
     
         // Obtener todas las categorías
         $categories = Category::all();
@@ -37,7 +37,7 @@ class ProductsController extends Controller
 
     public function addProduct(){
         $categories = Category::all();
-        return view('admin.product-add')
+        return view('admin.products-add')
             ->with('categories', $categories);
     }
 
@@ -49,7 +49,7 @@ class ProductsController extends Controller
             'name'=>'required|string|min:2',
             'slug'=>'required|string|min:2',
             'img'=>'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'price'=>'required|double',
+            'price'=>'required|decimal:2',
             'category_id'=>'required|integer',
             'description'=>'required|string|min:2',
             'stock'=>'required|integer',

@@ -104,7 +104,10 @@
                          </div>
                          <div class="mb-3">
                             <label for="">Estado:</label>
-                            <input type="text" class="form-control" id="txtState" name="state">
+                            <select name="state" id="txtState" class="form-control">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
                         </div>
                      </div>
                      <div class="modal-footer">
@@ -125,7 +128,6 @@
         for (let i = 0; i < botones.length; i++){
 
             botones[i].addEventListener('click',(evt)=>{
-            alert(1)
                 var id=evt.target.getAttribute('data-id')
                 var key=evt.target.getAttribute('data-dicount-key')
                 var quantity=evt.target.getAttribute('data-quantity')
