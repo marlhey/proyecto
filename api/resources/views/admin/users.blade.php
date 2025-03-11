@@ -38,22 +38,22 @@
                                 <th>Email</th>
                                 <th>Contraseña</th>
                                 <th>Imagen de Perfil</th>
-                                <th></th>
-                                <th></th>
+                              
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                             @foreach($data as $user)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td> 
+                                    <td>{{ $user->email }}</td> 
+                                    <td>***********</td> 
+                                    <td><img src="{{asset('users/'.$user->img_profile)}}" width="55px" alt=""></td> 
+                                   
+                                   
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>

@@ -41,22 +41,22 @@
                                 <th>Direccíon</th>
                                 <th>Email</th>
                                 <th>Sitio Web</th>
-                                <th></th>
-                                <th></th>
+                              
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $proveedor)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $proveedor->id }}</td>
+                                    <td>{{ $proveedor->name_company }}</td> 
+                                    <td>{{ $proveedor->contact_id }}</td>
+                                    <td>{{ $proveedor->phone }}</td> 
+                                    <td>{{ $proveedor->address }}</td>
+                                    <td>{{ $proveedor->email }}</td>
+                                    <td>{{ $proveedor->web_site }}</td>
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>

@@ -39,22 +39,21 @@
                                 <th>Número de Teléfono</th>
                                 <th>Dirección</th>
                                 <th>RFC</th>
-                                <th></th>
-                                <th></th>
+                              
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $cliente)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $cliente->id }}</td>
+                                    <td>{{ $cliente->customer_id }}</td> 
+                                    <td>{{ $cliente->number_phone }}</td>
+                                    <td>{{ $cliente->address }}</td> 
+                                    <td>{{ $cliente->rfc }}</td>
+                                
                                 </tr>
                             @endforeach 
-                            --}}
+                        
                         </tbody>
                     </table>
                 </div>

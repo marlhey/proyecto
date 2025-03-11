@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shipment;
+use App\Models\Product_Shipment;
+use App\Models\Sale;
+use App\Models\Customer;
 
 class ShipmentsController extends Controller
 {
     public function viewShipment()
     {
             $envio=Product_Shipment::select('shipments.*', 'sales.id as venta', 'customers.id as cliente')
-        ->join('sales', 'shipments.order_id', '=', 'sales.id')
+            ->join('sales', 'shipments.order_id', '=', 'sales.id')
             ->join('customers', 'shipments.customer_id', '=', 'customers.id')
             ->select('shipments.*', 'sales.*', 'customers.*') // Seleccionar todas las columnas
             ->orderBy('sales.id', 'ASC')

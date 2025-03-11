@@ -43,22 +43,24 @@
                                 <th>Estado</th>
                                 <th>Fecha de Envío</th>
                                 <th>Código de Seguimiento</th>
-                                <th></th>
-                                <th></th>
+                             
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($ventas as $venta)
+                            @foreach($data as $envio)
                                 <tr>
-                                    <td>{{ $venta->id }}</td>
-                                    <td>{{ $venta->cliente->nombre }}</td> 
-                                    <td>${{ number_format($venta->pago, 2) }}</td>
-                                    <td>{{ $venta->metodoPago->nombre }}</td> 
-                                    <td>{{ $venta->estado }}</td>
-                                    <td>{{ $venta->fecha_de_pago }}</td>
+                                    <td>{{ $envio->id }}</td>
+                                    <td>{{ $envio->venta}}</td> 
+                                    <td>{{ $envio->cliente}}</td>
+                                    <td>{{ $envio->mailing_address}}</td> 
+                                    <td>{{ $envio->shipping_method }}</td>
+                                    <td>{{ $envio->shipping_cost }}</td>
+                                    <td>{{ $envio->status}}</td>
+                                    <td>{{ $envio->shipping_date }}</td>
+                                    <td>{{ $envio->tracking_code }}</td>
                                 </tr>
                             @endforeach 
-                            --}}
+                            
                         </tbody>
                     </table>
                 </div>

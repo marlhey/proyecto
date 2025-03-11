@@ -7,6 +7,9 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DiscountsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\ShipmentsController;
+use App\Http\Controllers\SuppliersController;
+use App\Http\Controllers\CustomersController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,9 +23,6 @@ Route::post('/admin/products/add',[ProductsController::class,'saveProduct']);
 Route::post('/admin/products/update/{id}',[ProductsController::class,'update']);
 Route::delete('/admin/products/{id}',[ProductsController::class,'destroy'])->name('products.destroy');
 Route::get('/admin/categories',[CategoriesController::class,'viewCategory']);
-Route::get('/admin/categories/add',[CategoriesController::class,'addCategory']);
-Route::post('/admin/categories/add',[CategoriesController::class,'saveCategory']);
-Route::post('/admin/categories/update/{id}',[CategoriesController::class,'update']);
 Route::delete('/admin/categories/{id}',[CategoriesController::class,'destroy'])->name('categories.destroy');
 Route::get('/admin/discounts',[DiscountsController::class,'viewDiscount']);
 Route::get('/admin/discounts/add',[DiscountsController::class,'addDiscount']);
@@ -32,10 +32,10 @@ Route::delete('/admin/discounts/{id}',[DiscountsController::class,'destroy'])->n
 Route::get('/admin/payments',[PaymentsController::class,'viewPayments']);
 Route::delete('/admin/payments/{id}',[PaymentsController::class,'destroy'])->name('payments.destroy');
 Route::get('/admin/sales',[SalesController::class,'viewSales']);
-Route::get('/admin/shipments',function(){ return view('admin.shipments');});
-Route::get('/admin/customers',function(){ return view('admin.customers');});
-Route::get('/admin/suppliers',function(){ return view('admin.suppliers');});
-Route::get('/admin/users',function(){ return view('admin.users');});
+Route::get('/admin/shipments',[ShipmentsController::class,'viewShipment']);
+Route::get('/admin/customers',[CustomersController::class,'viewCustomer']);
+Route::get('/admin/suppliers',[SuppliersController::class,'viewSupplier']);
+Route::get('/admin/users',[UsersController::class,'viewUser']);
 
 Auth::routes();
 
