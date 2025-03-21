@@ -82,20 +82,18 @@
     </section>
     
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2025 Hexashop. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+     <div>
+    <FooterComponent/>
+    </div>
 </template>
 
 <script>
+import FooterComponent from '@/shared/FooterComponent.vue';
 export default{
     name:'CarShoppingComponent',
+    components:
+    {
+FooterComponent
+    }
 }
 </script>
