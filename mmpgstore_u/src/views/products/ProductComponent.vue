@@ -9,15 +9,16 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
+                            <img src="@/template/assets/images/logommpg.jpg" style="height: 100px;">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Men's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Ropa</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Calzado</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Accesorios</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Mangas</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
@@ -27,15 +28,7 @@
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </li>
-                            <li class="submenu">
-                                <a href="javascript:;">Features</a>
-                                <ul>
-                                    <li><a href="#">Features Page 1</a></li>
-                                    <li><a href="#">Features Page 2</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
-                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                                </ul>
-                            </li>
+                        
                             <li class="scroll-to-section"><a href="index.html">Explore</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -55,8 +48,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Check Our Products</h2>
-                        <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                        <h2>Checa Nuestros Productos!</h2>
+                        <span>Busca &amp; Compra los mejores productos para ti</span>
                     </div>
                 </div>
             </div>
@@ -71,8 +64,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Latest Products</h2>
-                        <span>Check out all of our products.</span>
+                        <h2>Nuestros Últimos Productos</h2>
+                        <span>Encuentra todos los productos aquí.</span>
                     </div>
                 </div>
             </div>
@@ -89,11 +82,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/men-01.jpg" alt="">
+                            <img src="@/template/assets/images/men1.avif" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Classic Spring</h4>
-                            <span>$120.00</span>
+                            <h4>Swueter Colores oscuros Dragon Ball</h4>
+                            <span>$530.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -114,11 +107,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/men-02.jpg" alt="">
+                            <img src="@/template/assets/images/men2.webp" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Air Force 1 X</h4>
-                            <span>$90.00</span>
+                            <h4>Playera personajes DB</h4>
+                            <span>$220.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -139,11 +132,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/men-03.jpg" alt="">
+                            <img src="@/template/assets/images/men3.avif" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Love Nana ‘20</h4>
-                            <span>$150.00</span>
+                            <h4>Pijama One Piece Conjunto</h4>
+                            <span>$450.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -164,11 +157,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/women-01.jpg" alt="">
+                            <img src="@/template/assets/images/mujer1.jpg" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>New Green Jacket</h4>
-                            <span>$75.00</span>
+                            <h4>Blusa Call of the night</h4>
+                            <span>$330.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -189,11 +182,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/women-02.jpg" alt="">
+                            <img src=@/template/assets/images/mujer2.webp alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Classic Dress</h4>
-                            <span>$45.00</span>
+                            <h4>Blusa blanca Hatsune <br> Miku</h4>
+                            <span>$345.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -214,11 +207,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/women-03.jpg" alt="">
+                            <img src=@/template/assets/images/women_3.jpg alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Spring Collection</h4>
-                            <span>$130.00</span>
+                            <h4>Blusa Blanca Ranma <br> manga corta </h4>
+                            <span>$230.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -239,11 +232,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/kid-01.jpg" alt="">
+                            <img src=@/template/assets/images/calzado.avif alt="">
                         </div>
                         <div class="down-content">
-                            <h4>School Collection</h4>
-                            <span>$80.00</span>
+                            <h4>Tenis blancos adidas <br> diseño Demon Slayer</h4>
+                            <span>$1080.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -264,11 +257,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/kid-02.jpg" alt="">
+                            <img src=@/template/assets/images/calzado2.avif alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Summer Cap</h4>
-                            <span>$12.00</span>
+                            <h4>Tenis convers Anya</h4>
+                            <span>$400.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
@@ -289,11 +282,11 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="assets/images/kid-03.jpg" alt="">
+                            <img src=@/template/assets/images/calzado3.jpeg alt="">
                         </div>
                         <div class="down-content">
-                            <h4>Classic Kid</h4>
-                            <span>$30.00</span>
+                            <h4>Tenis Convers Boku no <br> Hero Academia</h4>
+                            <span>$430.00</span>
                             <ul class="stars">
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
