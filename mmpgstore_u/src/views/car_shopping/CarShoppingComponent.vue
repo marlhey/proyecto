@@ -5,20 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
-                        </a>
-                        <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="products.html">Productos</a></li>
-                            <li><a href="cart.html" class="active">Carrito</a></li>
-                            <li><a href="contact.html">Contacto</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                    </nav>
+                    <HeaderComponent/>
                 </div>
             </div>
         </div>
@@ -89,11 +76,13 @@
 
 <script>
 import FooterComponent from '@/shared/FooterComponent.vue';
+import HeaderComponent from '@/shared/HeaderComponent.vue';
 export default{
     name:'CarShoppingComponent',
     components:
     {
-FooterComponent
+        FooterComponent,
+        HeaderComponent
     }
 }
 </script>

@@ -6,36 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="@/template/assets/images/logommpg.jpg" style="height: 100px;">
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Ropa</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Calzado</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Accesorios</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Mangas</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </li>
-                        
-                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
-                        </ul>        
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+                  ¿<HeaderComponent/>
                 </div>
             </div>
         </div>
@@ -333,11 +304,13 @@
 
 <script>
 import FooterComponent from '@/shared/FooterComponent.vue';
+import HeaderComponent from '@/shared/HeaderComponent.vue';
 export default{
     name:'ProductComponent',
     components:
     {
-FooterComponent
+    FooterComponent,
+    HeaderComponent
     }
 }
 </script>
