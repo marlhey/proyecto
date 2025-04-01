@@ -11,7 +11,7 @@ import CarShoppingComponent from "@/views/car_shopping/CarShoppingComponent.vue"
 const routes= [
     {path:'/',name:"index",component:HomeComponent},
     {path:'/contact',name:"contact",component:ContactComponent},
-    {path:'/product/show',name:"product", component: ProductSingleComponent},
+    {path:'/product/show/:id',name:"product", component: ProductSingleComponent},
     {path:'/product',name:"product_all", component: ProductComponent},
     {path:'/payment',name:"payment", component: PaymentComponent},
     {path:'/carshopping',name:"carshopping", component: CarShoppingComponent},

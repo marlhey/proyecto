@@ -161,7 +161,7 @@
                                 <span class="price">${{ ropa.price }}</span>
                             </div>
 
-                            <a href="#" class="btn btn-primary">Ver más</a>
+                            <router-link :to="'/product/show/'+ropa.id" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                                 <span class="price">${{ manga.price }}</span>
                             </div>
 
-                            <a href="#" class="btn btn-primary">Ver más</a>
+                            <router-link :to="'/product/show/'+manga.id" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                                 <span class="price">${{ accesorio.price }}</span>
                             </div>
 
-                            <a href="#" class="btn btn-primary">Ver más</a>
+                            <router-link :to="'/product/show/'+accesorio.id" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                                 <span class="price">${{ calzado.price }}</span>
                             </div>
 
-                            <a href="#" class="btn btn-primary">Ver más</a>
+                            <router-link :to="'/product/show/'+calzado.id" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -353,7 +353,7 @@
                                 <span class="price">${{ product.price }}</span>
                             </div>
 
-                            <a href="#" class="btn btn-primary">Ver más</a>
+                            <router-link :to="'/product/show/'+product.id" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>

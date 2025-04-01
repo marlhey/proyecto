@@ -14,7 +14,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading" id="top">
+    <div class="page-heading" style="" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -30,19 +30,23 @@
 
 
     <!-- ***** Product Area Starts ***** -->
-    <section class="section" id="product">
+    <section class="section" id="product" v-if="producto!=null">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="assets/images/single-product-01.jpg" alt="">
-                    <img src="assets/images/single-product-02.jpg" alt="">
+                    <img 
+                            :src="url+'products/'+producto.img" 
+                            class="card-img-top img-fluid" 
+                            alt="Producto" 
+                            style="height: 400px; max-width: 100%; object-fit: contain;"
+                        >
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
-                    <h4>New Green Jacket</h4>
-                    <span class="price">$75.00</span>
+                    <h4>{{ producto.name }}</h4>
+                    <span class="price">${{ producto.price }}</span>
                     <ul class="stars">
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
@@ -50,10 +54,8 @@
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                     </ul>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
-                    </div>
+                    <span>{{ producto.description }}</span>
+                    
                     <div class="quantity-content">
                         <div class="left-content">
                             <h6>No. of Orders</h6>
@@ -86,12 +88,42 @@
 <script>
 import FooterComponent from '@/shared/FooterComponent.vue';
 import HeaderComponent from '@/shared/HeaderComponent.vue';
+import { useRoute } from 'vue-router'
+import axios from 'axios';
 export default{
     name:'ProductSingleComponent',
     components:
     {
         FooterComponent,
         HeaderComponent
-    }
+    
+    },
+    data:()=>{
+        return {
+            producto:null,
+            id:0,
+            loaded:false,
+            url:'http://localhost:8000/'
+        }
+    },
+    methods:{
+        refresh(){
+            this.loaded=false
+            axios.get('products/'+this.id).then((response)=>{
+                console.log("Respuesta desde el backend",response.data)
+                this.producto = response.data.data
+            }).catch((error)=>{
+                console.log("Error",error)
+            }).finally(()=>{
+                this.loaded=true
+            })
+            
+        }
+    },
+    mounted(){
+        const route = useRoute()
+        this.id = route.params.id
+        this.refresh();
+    },
 }
 </script>
