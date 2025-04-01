@@ -17,14 +17,28 @@ class CategorysSeeder extends Seeder
         DB::table('categorys')->insert([
             'name'=>'Mangas',
             'description'=>'Historias originales en formato impreso.',
-            'image'=>'default_category.jpg',
+            'image'=>'manga2.web',
             'state'=>'Activo',
         ]);
 
         DB::table('categorys')->insert([
-            'name'=>'Ropa y Accesorios',
+            'name'=>'Ropa',
             'description'=>'Moda inspirada en anime, ropa temática y complementos.',
-            'image'=>'default_category2.jpg',
+            'image'=>'camisa.jpeg',
+            'state'=>'Activo',
+        ]);
+
+        DB::table('categorys')->insert([
+            'name'=>'Accesorios',
+            'description'=>'Completa tu estilo con lo mejor de tus articulos favoritos ',
+            'image'=>'cuadernos.webp',
+            'state'=>'Activo',
+        ]);
+
+        DB::table('categorys')->insert([
+            'name'=>'Calzado',
+            'description'=>'Crea el mejor conjunto',
+            'image'=>'calzado.avif',
             'state'=>'Activo',
         ]);
     }

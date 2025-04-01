@@ -122,148 +122,94 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Men Area Starts ***** -->
-    <section class="section" id="men">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <h2>Men's Latest</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="men-item-carousel">
-                        <div class="owl-men-item owl-carousel">
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="@/template/assets/images/men-01.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Classic Spring</h4>
-                                    <span>$120.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="@/template/assets/images/men-02.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Air Force 1 X</h4>
-                                    <span>$90.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="@/template/assets/images/men-03.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Love Nana ‘20</h4>
-                                    <span>$150.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="@/template/assets/images/men-01.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Classic Spring</h4>
-                                    <span>$120.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Men Area Ends ***** -->
-
-    <!-- ***** Women Area Starts ***** -->
+      
+    <!-- ***** Ropa Area Starts ***** -->
     <section class="section" id="women">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Últimas Categorias</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Lo Último En Ropa</h2>
+                        <span>Moda inspirada en anime, ropa temática y complementos.</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container mt-4">
             <div class="row justify-content-center">
-                <div class="col-md-3 d-flex" v-for="categories in categorias" :key="categories.id">
+                <div class="col-md-3 d-flex" v-for="ropa in ropas" :key="ropa.id">
                     <div class="card flex-fill" style="width: 100%;">
                         <img 
-                            :src="url+'categories/'+categories.img" 
+                            :src="url+'products/'+ropa.img" 
                             class="card-img-top img-fluid" 
                             alt="Categorias" 
                             style="height: 200px; object-fit: cover;"
                         >
                         <div class="card-body text-center">
-                            <h5 class="card-title">{{ categories.name }}</h5>
-                            <p class="card-text">Descripción de la categoria</p>
+                            <h5 class="card-title">{{ ropa.name }}</h5>
+                            <p class="card-text">{{ ropa.description }}</p>
+
+                            <!-- Contenedor de estrellas y precio -->
+                            <div class="stars-price-container">
+                                <ul class="stars" style="display: flex; justify-content: center;">
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="price">${{ ropa.price }}</span>
+                            </div>
+
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ***** Accesorios Area Ends ***** -->
+
+  
+    <!-- ***** Mangas Area Starts ***** -->
+    <section class="section" id="women">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Últimos Mangas</h2>
+                        <span>Historias originales en formato impreso.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-3 d-flex" v-for="manga in mangas" :key="manga.id">
+                    <div class="card flex-fill" style="width: 100%;">
+                        <img 
+                            :src="url+'products/'+manga.img" 
+                            class="card-img-top img-fluid" 
+                            alt="Categorias" 
+                            style="height: 200px; object-fit: cover;"
+                        >
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ manga.name }}</h5>
+                            <p class="card-text">{{ manga.description }}</p>
+
+                            <!-- Contenedor de estrellas y precio -->
+                            <div class="stars-price-container">
+                                <ul class="stars" style="display: flex; justify-content: center;">
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="price">${{ manga.price }}</span>
+                            </div>
+
                             <a href="#" class="btn btn-primary">Ver más</a>
                         </div>
                     </div>
@@ -271,16 +217,112 @@
             </div>
         </div>
     </section>
-    <!-- ***** Women Area Ends ***** -->
+    <!-- ***** Mangas Area Ends ***** -->
+
+    
+    <!-- ***** Accesorios Area Starts ***** -->
+    <section class="section" id="women">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Últimos Accesorios</h2>
+                        <span>Completa tu estilo con lo mejor de tus articulos favoritos </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-3 d-flex" v-for="accesorio in accesorios" :key="accesorio.id">
+                    <div class="card flex-fill" style="width: 100%;">
+                        <img 
+                            :src="url+'products/'+accesorio.img" 
+                            class="card-img-top img-fluid" 
+                            alt="Categorias" 
+                            style="height: 200px; object-fit: cover;"
+                        >
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ accesorio.name }}</h5>
+                            <p class="card-text">Descripción de la categoria</p>
+
+                            <!-- Contenedor de estrellas y precio -->
+                            <div class="stars-price-container">
+                                <ul class="stars" style="display: flex; justify-content: center;">
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="price">${{ accesorio.price }}</span>
+                            </div>
+
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ***** Accesorios Area Ends ***** -->
+
+    <!-- ***** Calzados Area Starts ***** -->
+    <section class="section" id="women">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Últimos Calzados</h2>
+                        <span>Crea el mejor conjunto que te acompañe en tu día a día</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-3 d-flex" v-for="calzado in calzados" :key="calzado.id">
+                    <div class="card flex-fill" style="width: 100%;">
+                        <img 
+                            :src="url+'products/'+calzado.img" 
+                            class="card-img-top img-fluid" 
+                            alt="Categorias" 
+                            style="height: 200px; object-fit: cover;"
+                        >
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ calzado.name }}</h5>
+                            <p class="card-text">{{ calzado.description }}</p>
+
+                            <!-- Contenedor de estrellas y precio -->
+                            <div class="stars-price-container">
+                                <ul class="stars" style="display: flex; justify-content: center;">
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="price">${{ calzado.price }}</span>
+                            </div>
+
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Calzado Area Ends ***** -->
 
     <!-- ***** Products Area Starts ***** -->
-    <section class="section" id="products">
+    <section class="section" id="women">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h2>Últimos Productos</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <span>Productos más recientes en la tienda</span>
                     </div>
                 </div>
             </div>
@@ -297,7 +339,20 @@
                         >
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">Descripción del producto</p>
+                            <p class="card-text">{{ product.description }}</p>
+
+                            <!-- Contenedor de estrellas y precio -->
+                            <div class="stars-price-container">
+                                <ul class="stars" style="display: flex; justify-content: center;">
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                    <li style="display: inline-block; margin: 0 3px;"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="price">${{ product.price }}</span>
+                            </div>
+
                             <a href="#" class="btn btn-primary">Ver más</a>
                         </div>
                     </div>
@@ -518,6 +573,10 @@ export default{
     data:()=>{
         return {
             ultimos:[],
+            mangas:[],
+            accesorios:[],
+            calzados:[],
+            ropas:[],
             categorias:[],
             loaded:false,
             url:'http://localhost:8000/'
@@ -529,6 +588,10 @@ export default{
             axios.get('index').then((response)=>{
                 console.log("Respuesta desde el backend",response.data)
                 this.ultimos=response.data.ultimos
+                this.mangas=response.data.mangas
+                this.accesorios=response.data.accesorios
+                this.calzados=response.data.calzados
+                this.ropas=response.data.ropas
                 this.categorias=response.data.categorias
             }).catch((error)=>{
                 console.log("Error",error)

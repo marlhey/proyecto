@@ -17,11 +17,19 @@ class IndexController extends Controller
         //traer los mas vendidos ultimos productos categorias, etc...
 
         //ultimos
-        $ultimos = Product::orderBy('created_at','DESC')->get()->take(10);
+        $ultimos = Product::orderBy('created_at','DESC')->get()->take(4);
+        $mangas = Product::where('category_id',1)->get()->take(4);
+        $accesorios = Product::where('category_id',3)->get()->take(4);
+        $calzados = Product::where('category_id',4)->get()->take(4);
+        $ropas = Product::where('category_id',2)->get()->take(4);
         $categorias = Category::all();
         return response()->json([
             'ultimos' => $ultimos,
             'categorias' => $categorias,
+            'mangas' => $mangas,
+            'accesorios' => $accesorios,
+            'calzados' => $calzados,
+            'ropas' => $ropas,
             'status' => 'success'
         ], 200);
     }
