@@ -161,7 +161,7 @@
                                 <span class="price">${{ ropa.price }}</span>
                             </div>
 
-                            <router-link :to="'/product/show/'+ropa.id" class="btn btn-primary">Ver más</router-link>
+                            <router-link :to="'/product/show/'+ropa.id" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                                 <span class="price">${{ manga.price }}</span>
                             </div>
 
-                            <router-link :to="'/product/show/'+manga.id" class="btn btn-primary">Ver más</router-link>
+                            <router-link :to="'/product/show/'+manga.id" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                                 <span class="price">${{ accesorio.price }}</span>
                             </div>
 
-                            <router-link :to="'/product/show/'+accesorio.id" class="btn btn-primary">Ver más</router-link>
+                            <router-link :to="'/product/show/'+accesorio.id" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                                 <span class="price">${{ calzado.price }}</span>
                             </div>
 
-                            <router-link :to="'/product/show/'+calzado.id" class="btn btn-primary">Ver más</router-link>
+                            <router-link :to="'/product/show/'+calzado.id" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>
@@ -353,7 +353,7 @@
                                 <span class="price">${{ product.price }}</span>
                             </div>
 
-                            <router-link :to="'/product/show/'+product.id" class="btn btn-primary">Ver más</router-link>
+                            <router-link :to="'/product/show/'+product.id" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Ver más</router-link>
                         </div>
                     </div>
                 </div>

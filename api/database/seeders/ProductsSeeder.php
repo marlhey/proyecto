@@ -141,6 +141,17 @@ class ProductsSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
+            'name'=>'Olla con estampado de Naruto Shippuden',
+            'slug'=>'Olla para ramen',
+            'img'=>'olladenaruto.jpg',
+            'price'=>760.00,
+            'category_id'=>'3',
+            'description'=>'Olla para ramen. Anime Naruto Shippuden. Cuenta con un tazon y 2 palillos de metal',
+            'stock'=>'4',
+            'status'=>'Disponible',
+        ]);
+
+        DB::table('products')->insert([
             'name'=>'Tenis Naruto ',
             'slug'=>'Tenis_Naruto',
             'img'=>'tenisnaruto.jpg',
