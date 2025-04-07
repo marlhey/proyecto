@@ -61,7 +61,8 @@
                     </div>
                     <div class="cart-total">
                         <h4>Total a pagar: <span>$70.00</span></h4>
-                        <a href="checkout.html" class="btn btn-primary">Proceder al Pago</a>
+                        <router-link :to="'/payment'" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Proceder al Pago</router-link>
+                        
                     </div>
                 </div>
             </div>

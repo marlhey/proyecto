@@ -58,7 +58,7 @@
                     
                     <div class="quantity-content">
                         <div class="left-content">
-                            <h6>No. of Orders</h6>
+                            <h6>Cantidad</h6>
                         </div>
                         <div class="right-content">
                             <div class="quantity buttons_added">
@@ -68,7 +68,9 @@
                     </div>
                     <div class="total">
                         <h4>Total: $210.00</h4>
-                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        <div class="main-border-button">
+                            <router-link :to="'/carshopping'" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Agregar al Carrito</router-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,6 +90,7 @@
 <script>
 import FooterComponent from '@/shared/FooterComponent.vue';
 import HeaderComponent from '@/shared/HeaderComponent.vue';
+
 import { useRoute } from 'vue-router'
 import axios from 'axios';
 export default{
