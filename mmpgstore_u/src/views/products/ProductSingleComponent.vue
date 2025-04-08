@@ -62,14 +62,16 @@
                         </div>
                         <div class="right-content">
                             <div class="quantity buttons_added">
-                                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                <input type="button" value="-" class="minus" @click="disminuir()">
+                                <input type="number" step="1" min="1" max="" name="quantity" :value="cantidad" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus" @click="aumentar()">
                             </div>
                         </div>
                     </div>
                     <div class="total">
-                        <h4>Total: $210.00</h4>
+                        <h4>Total: ${{ producto.price * cantidad}}</h4>
                         <div class="main-border-button">
-                            <router-link :to="'/carshopping'" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Agregar al Carrito</router-link>
+                            <button style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary" @click="agregar()">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,9 @@ export default{
             producto:null,
             id:0,
             loaded:false,
-            url:'http://localhost:8000/'
+            url:'http://localhost:8000/',
+            cantidad: 1,
+            carrito: []
         }
     },
     methods:{
@@ -121,12 +125,36 @@ export default{
                 this.loaded=true
             })
             
+        },
+        aumentar(){
+            this.cantidad ++
+        },
+        disminuir(){
+            if(this.cantidad > 1){
+            this.cantidad --
+            }
+        },
+        agregar(){
+         this.carrito.push({
+            id: this.producto.id, 
+            name: this.producto.name,
+            precio: this.producto.price,
+            cantidad: this.cantidad
+         }) 
+         localStorage.setItem("carrito", JSON.stringify(this.carrito))
+         this.$router.push('/carshopping');
         }
+
+
     },
     mounted(){
         const route = useRoute()
         this.id = route.params.id
         this.refresh();
+        if(localStorage.getItem("carrito")){
+                this.carrito = JSON.parse(localStorage.getItem("carrito"))
+            }
     },
+
 }
 </script>

@@ -35,32 +35,26 @@
                             <thead>
                                 <tr>
                                     <th>Producto</th>
-                                    <th>Precio</th>
+                                    <th>Precio Unitario</th>
                                     <th>Cantidad</th>
                                     <th>Total</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><img src="assets/images/product-01.jpg" alt=""> Camiseta Anime</td>
-                                    <td>$20.00</td>
-                                    <td><input type="number" value="1" min="1"></td>
-                                    <td>$20.00</td>
-                                    <td><button class="btn btn-danger">Eliminar</button></td>
+                                <tr  v-for="product in productCar" :key="product.id">
+                                    <td><img src="assets/images/product-01.jpg" alt=""> {{ product.name }}</td>
+                                    <td>{{ product.precio }}</td>
+                                    <td><input type="number" :value=" product.cantidad "></td>
+                                    <td>{{ product.precio * product.cantidad }}</td>
+                                    <td><button class="btn btn-danger" @click="eliminarProducto(index)">Eliminar</button></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="assets/images/product-02.jpg" alt=""> Figura Coleccionable</td>
-                                    <td>$50.00</td>
-                                    <td><input type="number" value="1" min="1"></td>
-                                    <td>$50.00</td>
-                                    <td><button class="btn btn-danger">Eliminar</button></td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
                     <div class="cart-total">
-                        <h4>Total a pagar: <span>$70.00</span></h4>
+                        <h4>Total a pagar: <span>${{ totalAPagar.toFixed(2) }}</span></h4>
                         <router-link :to="'/payment'" style="background-color: #800080; color: white; border-color: #800080;" class="btn btn-primary">Proceder al Pago</router-link>
                         
                     </div>
@@ -84,6 +78,30 @@ export default{
     {
         FooterComponent,
         HeaderComponent
+    },
+    data:()=>{
+        return {
+            productCar:[]
+        }
+    },
+    mounted(){
+        if(localStorage.getItem("carrito")){
+                this.productCar = JSON.parse(localStorage.getItem("carrito"))
+            }
+    },
+    computed: {
+    totalAPagar() {
+        return this.productCar.reduce((total, product) => {
+            return total + (product.precio * product.cantidad);
+        }, 0);
+    }
+   },
+   methods: {
+    eliminarProducto(index) {
+        this.productCar.splice(index, 1); // elimina el producto del arreglo
+        localStorage.setItem("carrito", JSON.stringify(this.productCar)); // actualiza el localStorage
     }
 }
+  }
+
 </script>
