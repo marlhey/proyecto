@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@paypal/paypal-js": "^8.2.0",
     "axios": "^1.8.2",
     "bootstrap": "^5.3.3",
     "bootstrap-vue": "^2.23.1",
