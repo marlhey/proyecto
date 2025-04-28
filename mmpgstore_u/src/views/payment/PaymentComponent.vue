@@ -63,7 +63,8 @@
                                 <label for="cvv">CVV</label>
                                 <input type="text" class="form-control" id="cvv" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Pagar Ahora</button>
+                            <button type="" class="btn btn-primary mt-5">Pagar Ahora</button>
+                            <div class="col-6 float-end mt-5" id="btnPaypal"></div>
                         </form>
                     </div>
                 </div>
@@ -81,12 +82,50 @@
 <script>
 import FooterComponent from '@/shared/FooterComponent.vue';
 import HeaderComponent from '@/shared/HeaderComponent.vue';
+import { loadScript } from '@paypal/paypal-js';
 export default{
     name:'PaymentComponent.vue',
     components:
     {
     FooterComponent,
     HeaderComponent
+    },
+    mounted(){
+        this.pagar();
+    },
+    methods:{
+        pagar(){
+            loadScript({
+                'client-id':'AX5Zh1qw8P9NrHpekjZcErALIKo1JMtY-Pmq3upa3uZ3id3KMcjHbKrxwiRJEMvm8OEdTlxzKaE9ZOw5',
+                'currency':'MXN',
+            }).then((paypal)=>{
+                paypal.Buttons({
+                    createOrder:this.createOrder,
+                    onApprove:this.onApprove,  
+                }).render('#btnPaypal');
+            })
+        },
+        createOrder(data,actions){
+            console.log("CREANDO ORDEN",data,actions);
+            return actions.order.create({
+               purchase_units: [{
+                amount: {
+                    value:'299.98',
+                },
+               }],
+            }).then(function(orderId){
+                console.log("ID DE ORDEN",orderId);
+                return orderId;
+            });
+        },
+        onApprove(data,actions){
+            console.log("APROBANDO ORDEN",data,actions);
+            alert("Pago realizado con exito");
+            return actions.order.capture().then(function(details){
+                console.log("Detalles de la orden",details);
+                alert('Gracias por su compra,' +details.payer.name.given_name);
+            });
+        },
     }
 }
 </script>
