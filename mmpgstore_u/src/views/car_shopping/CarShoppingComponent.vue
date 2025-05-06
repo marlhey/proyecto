@@ -81,12 +81,14 @@ export default{
     },
     data:()=>{
         return {
-            productCar:[]
+            productCar:[],
+            total:0,
         }
     },
     mounted(){
         if(localStorage.getItem("carrito")){
                 this.productCar = JSON.parse(localStorage.getItem("carrito"))
+               // this.total = this.totalAPagar()
             }
     },
     computed: {

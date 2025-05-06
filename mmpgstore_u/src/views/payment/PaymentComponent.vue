@@ -83,6 +83,7 @@
 import FooterComponent from '@/shared/FooterComponent.vue';
 import HeaderComponent from '@/shared/HeaderComponent.vue';
 import { loadScript } from '@paypal/paypal-js';
+import axios from 'axios';
 export default{
     name:'PaymentComponent.vue',
     components:
@@ -90,10 +91,30 @@ export default{
     FooterComponent,
     HeaderComponent
     },
-    mounted(){
-        this.pagar();
+    data:()=>{
+        return {
+            productCar:[],
+            total:0,
+        }
     },
+    mounted(){
+        
+        if(localStorage.getItem("carrito")){
+                this.productCar = JSON.parse(localStorage.getItem("carrito"))
+                this.total = this.totalAPagar()
+                this.pagar();            
+            }
+    },
+    computed: {
+    
+   },
     methods:{
+        totalAPagar() {
+        return this.productCar.reduce((total, product) => {
+            return total + (product.precio * product.cantidad);
+        }, 0);
+    },
+
         pagar(){
             loadScript({
                 'client-id':'AX5Zh1qw8P9NrHpekjZcErALIKo1JMtY-Pmq3upa3uZ3id3KMcjHbKrxwiRJEMvm8OEdTlxzKaE9ZOw5',
@@ -107,24 +128,43 @@ export default{
         },
         createOrder(data,actions){
             console.log("CREANDO ORDEN",data,actions);
+           
             return actions.order.create({
                purchase_units: [{
                 amount: {
-                    value:'299.98',
+                    value:this.total,
                 },
                }],
             }).then(function(orderId){
                 console.log("ID DE ORDEN",orderId);
+                
                 return orderId;
             });
         },
         onApprove(data,actions){
             console.log("APROBANDO ORDEN",data,actions);
             alert("Pago realizado con exito");
+            let  prod=this.productCar
+            let  total=this.total
+             axios.post("sales",
+                    {
+                        productos:prod,
+                        total:total,
+                        referencia:"121212",
+                        met_pago:1,
+                        cliente_id:1,
+                    }
+                ).then((response) => {
+                    console.log(response)
+                    alert("venta guardada correctamente")
+                })
             return actions.order.capture().then(function(details){
                 console.log("Detalles de la orden",details);
+               
                 alert('Gracias por su compra,' +details.payer.name.given_name);
+                
             });
+
         },
     }
 }
