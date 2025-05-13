@@ -6,6 +6,7 @@ import ProductSingleComponent from "@/views/products/ProductSingleComponent.vue"
 import ProductComponent from "@/views/products/ProductComponent.vue";
 import PaymentComponent from "@/views/payment/PaymentComponent.vue";
 import CarShoppingComponent from "@/views/car_shopping/CarShoppingComponent.vue";
+import LoginComponent from "@/views/login/LoginComponent.vue";
 
 
 const routes= [
@@ -15,6 +16,7 @@ const routes= [
     {path:'/product',name:"product_all", component: ProductComponent},
     {path:'/payment',name:"payment", component: PaymentComponent},
     {path:'/carshopping',name:"carshopping", component: CarShoppingComponent},
+    {path:'/login',name:"login", component: LoginComponent},
 ]
 
 const router = createRouter({

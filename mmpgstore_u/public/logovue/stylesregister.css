@@ -1,0 +1,8 @@
+body {
+    background: linear-gradient(135deg, #ff8c00,#7e1ebd, #210349);
+    color: #ffffff; /* Texto en blanco para contraste */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    
+}
